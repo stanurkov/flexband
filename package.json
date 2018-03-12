@@ -3,9 +3,8 @@
   "version": "0.0.2",
   "description": "React Flexbox wrapper",
   "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": "https://github.com/stanurkov/flexband",
+  "repository": "github:stanurkov/flexband",
   "keywords": [
     "flexbox",
     "react"
