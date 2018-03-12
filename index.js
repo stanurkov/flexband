@@ -150,12 +150,12 @@ export class FlexBandItem extends Component {
 }
 
 FlexBandItem.propTypes = {
-    margin: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    minWidth: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    width: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    grow: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    shrink: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    margin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    grow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    shrink: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     basis: PropTypes.string,
     align: PropTypes.string,
-    order: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    order: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }

@@ -193,12 +193,12 @@ var FlexBandItem = exports.FlexBandItem = function (_Component2) {
 }(_react.Component);
 
 FlexBandItem.propTypes = {
-    margin: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number]),
-    minWidth: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number]),
-    width: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number]),
-    grow: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number]),
-    shrink: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number]),
+    margin: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    minWidth: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    grow: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    shrink: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
     basis: _propTypes2.default.string,
     align: _propTypes2.default.string,
-    order: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.number])
+    order: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number])
 };
