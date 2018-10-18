@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import { FlexBandProps, FlexBandItemProps } from './flexband';
 
 const defaultMargin = 0;
 
-function objectWithout( object, exclude ) {
+function objectWithout( object: any, exclude: any ) {
     let i, j;
     for (i in exclude) {
         if (typeof object[i] !== 'undefined') {
-            const newObject = {};
+            const newObject: any = {};
             for (j in object) {
                 if (!(exclude[j])) {
                     newObject[j] = object[j];
@@ -19,11 +20,10 @@ function objectWithout( object, exclude ) {
     return object;
 }
 
-
-export default class FlexBand extends Component {
+export default class FlexBand extends React.Component<FlexBandProps> {
 
     render() {
-        const style = {display: "flex", flexWrap: "wrap",};
+        const style: any = {display: "flex", flexWrap: "wrap"};
         const {
             direction,
             align,
@@ -35,12 +35,15 @@ export default class FlexBand extends Component {
             fullHeight,
         } = this.props;
 
-        const other = objectWithout(this.props, FlexBand.propTypes);
+        const other = objectWithout(this.props, flexBandPropTypes);
+
+        // const other: FlexBandProps = this.props;
 
         let pStyle = this.props.style;
 
         if (pStyle) {
-            for (let i in pStyle) {
+            let i: any;
+            for (i in pStyle) {
                 style[i] = pStyle[i];
             }
         }
@@ -86,7 +89,10 @@ export default class FlexBand extends Component {
     }
 }
 
-FlexBand.propTypes = {
+
+
+
+const flexBandPropTypes = {
     direction: PropTypes.string,
     align: PropTypes.string,
     justify: PropTypes.string,
@@ -97,7 +103,7 @@ FlexBand.propTypes = {
     fullHeight: PropTypes.bool,
 }
 
-export class FlexBandItem extends Component {
+export class FlexBandItem extends React.Component<FlexBandItemProps> {
 
     render() {
         const {
@@ -110,11 +116,11 @@ export class FlexBandItem extends Component {
             basis,
             align,
             order,
-        } = this.props;
+        }: any = this.props;
 
-        const other = objectWithout(this.props, FlexBandItem.propTypes);
+        const other = objectWithout(this.props, flexBandItemPropTypes);
 
-        const pStyle = {display: "inline-block", width: width, minWidth: minWidth };
+        const pStyle: any = {display: "inline-block", width: width, minWidth: minWidth };
 
         if (margin || !other || !other.className) 
             pStyle.margin = margin || defaultMargin;
@@ -149,7 +155,7 @@ export class FlexBandItem extends Component {
     }
 }
 
-FlexBandItem.propTypes = {
+const flexBandItemPropTypes = {
     margin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
